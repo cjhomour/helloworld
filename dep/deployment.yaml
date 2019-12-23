@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test
+  name: test-deployment
+  namespace: aaa-namespace
+spec:
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - args:
+            - '1000'
+          command:
+            - sleep
+          image: 'nginx:1.7.9'
+          name: liuzongyao
+          resources:
+            limits:
+              cpu: 10m
+              memory: 10Mi
+          ports:
+            - containerPort: 80
+
