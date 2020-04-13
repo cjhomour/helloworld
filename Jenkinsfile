@@ -1,1 +1,1 @@
-echo "this master branch"
+echo "this disable branch"
